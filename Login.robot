@@ -41,7 +41,7 @@ Create Order
     Click Element    ${Sidebar}
     
     # Ini order > 1
-    #eng
+    #engaa
     # FOR    ${instrument}    ${price}    ${qty}    IN    @{OrderData}
     # Log    Ordering ${instrument} at price ${price} for quantity ${qty}
     #
