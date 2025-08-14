@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.2 on win32)" generated="2025-08-14T08:44:53.297127" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\enggar.prastio\Documents\automation python\robot\Login.robot">
+<test id="s1-t1" name="Login Test" line="8">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-14T08:44:54.195702" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000179B62C2E10&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-14T08:44:54.195702" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T08:44:54.195702" elapsed="0.002041"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--allow-insecure-localhost</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T08:44:54.197743" elapsed="0.000000"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:44:54.197743" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-08-14T08:44:54.197743" elapsed="2.153371"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:44:56.351114" level="INFO">Opening url 'https://ncd-web-internal-n03a.mme060.ingress.mme.idx.co.id/index.html?lang=en-US'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-08-14T08:44:56.351114" elapsed="0.582458"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-14T08:44:56.935512" elapsed="0.057663"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:44:56.998694" level="INFO">Executing JavaScript:
+document.body.style.zoom = '60%'
+Without any arguments.</msg>
+<arg>document.body.style.zoom = '60%'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-08-14T08:44:56.993175" elapsed="0.018814"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:44:57.011989" level="INFO">Typing text 'TR_IDX01' into text field '//input[@id='username']'.</msg>
+<arg>${username_input}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:44:57.011989" elapsed="0.152277"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:44:57.166638" level="INFO">Typing text 'P@ssw0rd' into text field '//*[@id='password']'.</msg>
+<arg>${password_input}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:44:57.166638" elapsed="0.118567"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:44:57.285205" level="INFO">Clicking button '//input[@id='kc-login']'.</msg>
+<arg>${buttonlogin}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:44:57.285205" elapsed="0.292312"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Welcome!</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T08:44:57.578831" elapsed="1.339736"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:44:58.933552" level="INFO">Current page contains text 'Welcome!'.</msg>
+<arg>Welcome!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-08-14T08:44:58.919074" elapsed="0.014478"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-14T08:45:08.936346" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-14T08:44:58.935566" elapsed="10.000780"/>
+</kw>
+<status status="PASS" start="2025-08-14T08:44:54.194624" elapsed="14.741722"/>
+</test>
+<test id="s1-t2" name="Create Order" line="35">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-14T08:45:10.940238" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-14T08:45:08.939491" elapsed="2.000747"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:10.942242" level="INFO">Clicking element '//div[@id='SharedWorkspaces']'.</msg>
+<arg>${Workspace}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:10.942242" elapsed="0.135594"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:11.079278" level="INFO">Clicking element '//div[@id= 'enter_order']'.</msg>
+<arg>${Enter_Order}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:11.079278" elapsed="0.171213"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:11.250491" level="INFO">Clicking element '//div[@id= 'sidebar-button-2']'.</msg>
+<arg>${Sidebar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:11.250491" elapsed="0.442302"/>
+</kw>
+<kw name="Open Workbook" owner="RPA.Excel.Files">
+<msg time="2025-08-14T08:45:11.756131" level="INFO">Opened workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x00000179B63012B0&gt;</msg>
+<arg>${EXCEL_FILE}</arg>
+<doc>Open an existing Excel workbook.</doc>
+<status status="PASS" start="2025-08-14T08:45:11.692793" elapsed="0.071379"/>
+</kw>
+<kw name="Read Worksheet As Table" owner="RPA.Excel.Files">
+<msg time="2025-08-14T08:45:11.781871" level="INFO">Created table: Table(columns=['Instrument', 'Price', 'Qty'], rows=2)</msg>
+<msg time="2025-08-14T08:45:11.921836" level="INFO">${data} = Table(columns=['Instrument', 'Price', 'Qty'], rows=2)</msg>
+<var>${data}</var>
+<arg>header=True</arg>
+<doc>Read the contents of a worksheet into a Table container. Allows
+sorting/filtering/manipulating using the ``RPA.Tables`` library.</doc>
+<status status="PASS" start="2025-08-14T08:45:11.764172" elapsed="0.157664"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-14T08:45:12.130278" level="INFO">${instrument} = BBCA_RG</msg>
+<var>${instrument}</var>
+<arg>${row}[Instrument]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-14T08:45:12.127898" elapsed="0.002894"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-14T08:45:12.136318" level="INFO">${price} = 2600</msg>
+<var>${price}</var>
+<arg>${row}[Price]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-14T08:45:12.131778" elapsed="0.004540"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-14T08:45:12.142064" level="INFO">${qty} = 100</msg>
+<var>${qty}</var>
+<arg>${row}[Qty]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-14T08:45:12.136318" elapsed="0.005746"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:12.143090" level="INFO">Typing text 'BBCA_RG' into text field '//*[@id='1:InstrumentID:0']'.</msg>
+<arg>${Instument_Input}</arg>
+<arg>${Instrument}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:12.142577" elapsed="1.049486"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:13.194075" level="INFO">Sending key(s) ('ENTER',) to //*[@id='1:InstrumentID:0'] element.</msg>
+<msg time="2025-08-14T08:45:13.653379" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-14T08:45:13.653379" level="INFO">Releasing special key ENTER.</msg>
+<arg>${Instument_Input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-14T08:45:13.192063" elapsed="0.493744"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-14T08:45:16.687599" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-14T08:45:13.685807" elapsed="3.001792"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:16.687599" level="INFO">Typing text '2600' into text field '//*[@id='1:Price:0']'.</msg>
+<arg>${Price_Input}</arg>
+<arg>${price}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:16.687599" elapsed="0.302154"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:16.991768" level="INFO">Sending key(s) ('ENTER',) to //*[@id='1:Price:0'] element.</msg>
+<msg time="2025-08-14T08:45:17.358110" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-14T08:45:17.358110" level="INFO">Releasing special key ENTER.</msg>
+<arg>${Price_Input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-14T08:45:16.989753" elapsed="0.376722"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:17.368342" level="INFO">Typing text '100' into text field '//*[@id='1:Quantity:0']'.</msg>
+<arg>${Quantity_Input}</arg>
+<arg>${qty}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:17.366475" elapsed="0.189540"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:17.556015" level="INFO">Sending key(s) ('ENTER',) to //*[@id='1:Quantity:0'] element.</msg>
+<msg time="2025-08-14T08:45:17.905556" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-14T08:45:17.905556" level="INFO">Releasing special key ENTER.</msg>
+<arg>${Quantity_Input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-14T08:45:17.556015" elapsed="0.366716"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:17.922731" level="INFO">Clicking element '//*[@id='1:OrderType:0-wrapper']/div/div'.</msg>
+<arg>${Type_select}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:17.922731" elapsed="0.181322"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:18.104053" level="INFO">Clicking element '//*[@id='root']/div[3]/div//*[contains(text(), 'Limit')]'.</msg>
+<arg>${Limit}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:18.104053" elapsed="0.156257"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:18.261547" level="INFO">Typing text 'IDD3112UD695322' into text field '//*[@id='1:Client:0']'.</msg>
+<arg>${Client_Account_Input}</arg>
+<arg>${Client_Account}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:18.261034" elapsed="0.389541"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:18.652296" level="INFO">Sending key(s) ('ENTER',) to //*[@id='1:Client:0'] element.</msg>
+<msg time="2025-08-14T08:45:19.083093" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-14T08:45:19.083093" level="INFO">Releasing special key ENTER.</msg>
+<arg>${Client_Account_Input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-14T08:45:18.650575" elapsed="0.443498"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:19.096085" level="INFO">Typing text 'E123' into text field '//*[@id='1:OrderSource:0']'.</msg>
+<arg>${Order_Source_Input}</arg>
+<arg>${Order_Source}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:19.094073" elapsed="0.256589"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:19.350662" level="INFO">Sending key(s) ('ENTER',) to //*[@id='1:OrderSource:0'] element.</msg>
+<msg time="2025-08-14T08:45:19.656187" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-14T08:45:19.656187" level="INFO">Releasing special key ENTER.</msg>
+<arg>${Order_Source_Input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-14T08:45:19.350662" elapsed="0.316743"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:19.668608" level="INFO">Clicking button '//*[@id='1:SellOrderCommand']'.</msg>
+<arg>${Sell}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:19.668096" elapsed="0.204373"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-14T08:45:29.873469" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-14T08:45:19.872469" elapsed="10.001000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:29.941255" level="INFO">Element '//*[@id="1:message"]/div' is displayed.</msg>
+<arg>//*[@id="1:message"]/div</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T08:45:29.873469" elapsed="0.067786"/>
+</kw>
+<msg time="2025-08-14T08:45:29.941255" level="INFO">${popup_present} = True</msg>
+<var>${popup_present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//*[@id="1:message"]/div</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-14T08:45:29.873469" elapsed="0.067786"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:29.941255" level="INFO">Sending key(s) ('ENTER',) to //*[@id="1:message"]/div element.</msg>
+<msg time="2025-08-14T08:45:30.254783" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-14T08:45:30.254783" level="INFO">Releasing special key ENTER.</msg>
+<arg>//*[@id="1:message"]/div</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-14T08:45:29.941255" elapsed="0.334214"/>
+</kw>
+<arg>${popup_present}</arg>
+<arg>Press Keys</arg>
+<arg>//*[@id="1:message"]/div</arg>
+<arg>ENTER</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-08-14T08:45:29.941255" elapsed="0.334214"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-14T08:45:32.275924" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-14T08:45:30.275469" elapsed="2.001187"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:32.301768" level="INFO">Element '//*[@id="1:message"]/div' is displayed.</msg>
+<arg>//*[@id="1:message"]/div</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T08:45:32.276656" elapsed="0.025112"/>
+</kw>
+<msg time="2025-08-14T08:45:32.301768" level="INFO">${popup_present} = True</msg>
+<var>${popup_present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//*[@id="1:message"]/div</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-14T08:45:32.276656" elapsed="0.025112"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:32.301768" level="INFO">Sending key(s) ('ENTER',) to //*[@id="1:message"]/div element.</msg>
+<msg time="2025-08-14T08:45:32.638368" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-14T08:45:32.638368" level="INFO">Releasing special key ENTER.</msg>
+<arg>//*[@id="1:message"]/div</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-14T08:45:32.301768" elapsed="0.353103"/>
+</kw>
+<arg>${popup_present}</arg>
+<arg>Press Keys</arg>
+<arg>//*[@id="1:message"]/div</arg>
+<arg>ENTER</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-08-14T08:45:32.301768" elapsed="0.353103"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-14T08:45:34.655258" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-14T08:45:32.654871" elapsed="2.000387"/>
+</kw>
+<var name="${row}">{'Instrument': 'BBCA_RG', 'Price': 2600, 'Qty': 100}</var>
+<status status="PASS" start="2025-08-14T08:45:12.125884" elapsed="22.529374"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-14T08:45:34.655258" level="INFO">${instrument} = ACRO_RG</msg>
+<var>${instrument}</var>
+<arg>${row}[Instrument]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-14T08:45:34.655258" elapsed="0.002013"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-14T08:45:34.657271" level="INFO">${price} = 3450</msg>
+<var>${price}</var>
+<arg>${row}[Price]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-14T08:45:34.657271" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-14T08:45:34.657271" level="INFO">${qty} = 50</msg>
+<var>${qty}</var>
+<arg>${row}[Qty]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-14T08:45:34.657271" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:34.659284" level="INFO">Typing text 'ACRO_RG' into text field '//*[@id='1:InstrumentID:0']'.</msg>
+<arg>${Instument_Input}</arg>
+<arg>${Instrument}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:34.657271" elapsed="0.242430"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:34.899701" level="INFO">Sending key(s) ('ENTER',) to //*[@id='1:InstrumentID:0'] element.</msg>
+<msg time="2025-08-14T08:45:35.355692" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-14T08:45:35.356365" level="INFO">Releasing special key ENTER.</msg>
+<arg>${Instument_Input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-14T08:45:34.899701" elapsed="0.480882"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-14T08:45:38.380748" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-14T08:45:35.380583" elapsed="3.000165"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:38.381284" level="INFO">Typing text '3450' into text field '//*[@id='1:Price:0']'.</msg>
+<arg>${Price_Input}</arg>
+<arg>${price}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:38.381284" elapsed="0.289277"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:38.672576" level="INFO">Sending key(s) ('ENTER',) to //*[@id='1:Price:0'] element.</msg>
+<msg time="2025-08-14T08:45:38.975006" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-14T08:45:38.975006" level="INFO">Releasing special key ENTER.</msg>
+<arg>${Price_Input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-14T08:45:38.670561" elapsed="0.317047"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:38.987608" level="INFO">Typing text '50' into text field '//*[@id='1:Quantity:0']'.</msg>
+<arg>${Quantity_Input}</arg>
+<arg>${qty}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:38.987608" elapsed="0.195390"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:39.185156" level="INFO">Sending key(s) ('ENTER',) to //*[@id='1:Quantity:0'] element.</msg>
+<msg time="2025-08-14T08:45:39.532823" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-14T08:45:39.532823" level="INFO">Releasing special key ENTER.</msg>
+<arg>${Quantity_Input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-14T08:45:39.182998" elapsed="0.358305"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:39.541303" level="INFO">Clicking element '//*[@id='1:OrderType:0-wrapper']/div/div'.</msg>
+<arg>${Type_select}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:39.541303" elapsed="0.130207"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:39.671510" level="INFO">Clicking element '//*[@id='root']/div[3]/div//*[contains(text(), 'Limit')]'.</msg>
+<arg>${Limit}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:39.671510" elapsed="0.229177"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:39.900687" level="INFO">Typing text 'IDD3112UD695322' into text field '//*[@id='1:Client:0']'.</msg>
+<arg>${Client_Account_Input}</arg>
+<arg>${Client_Account}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:39.900687" elapsed="0.395392"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:40.299645" level="INFO">Sending key(s) ('ENTER',) to //*[@id='1:Client:0'] element.</msg>
+<msg time="2025-08-14T08:45:40.775686" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-14T08:45:40.775686" level="INFO">Releasing special key ENTER.</msg>
+<arg>${Client_Account_Input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-14T08:45:40.299645" elapsed="0.494635"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:40.794280" level="INFO">Typing text 'E123' into text field '//*[@id='1:OrderSource:0']'.</msg>
+<arg>${Order_Source_Input}</arg>
+<arg>${Order_Source}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:40.794280" elapsed="0.179564"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:40.975854" level="INFO">Sending key(s) ('ENTER',) to //*[@id='1:OrderSource:0'] element.</msg>
+<msg time="2025-08-14T08:45:41.320330" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-14T08:45:41.320330" level="INFO">Releasing special key ENTER.</msg>
+<arg>${Order_Source_Input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-14T08:45:40.973844" elapsed="0.353361"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:41.327205" level="INFO">Clicking button '//*[@id='1:SellOrderCommand']'.</msg>
+<arg>${Sell}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T08:45:41.327205" elapsed="0.142643"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-14T08:45:51.469891" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-14T08:45:41.469848" elapsed="10.000043"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:51.511856" level="INFO">Element '//*[@id="1:message"]/div' is displayed.</msg>
+<arg>//*[@id="1:message"]/div</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T08:45:51.469891" elapsed="0.041965"/>
+</kw>
+<msg time="2025-08-14T08:45:51.511856" level="INFO">${popup_present} = True</msg>
+<var>${popup_present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//*[@id="1:message"]/div</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-14T08:45:51.469891" elapsed="0.041965"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:51.516193" level="INFO">Sending key(s) ('ENTER',) to //*[@id="1:message"]/div element.</msg>
+<msg time="2025-08-14T08:45:51.804646" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-14T08:45:51.804646" level="INFO">Releasing special key ENTER.</msg>
+<arg>//*[@id="1:message"]/div</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-14T08:45:51.511856" elapsed="0.327111"/>
+</kw>
+<arg>${popup_present}</arg>
+<arg>Press Keys</arg>
+<arg>//*[@id="1:message"]/div</arg>
+<arg>ENTER</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-08-14T08:45:51.511856" elapsed="0.327111"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-14T08:45:53.839444" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-14T08:45:51.838967" elapsed="2.000477"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:53.913631" level="INFO">Element '//*[@id="1:message"]/div' is displayed.</msg>
+<arg>//*[@id="1:message"]/div</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T08:45:53.839444" elapsed="0.074187"/>
+</kw>
+<msg time="2025-08-14T08:45:53.913631" level="INFO">${popup_present} = True</msg>
+<var>${popup_present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//*[@id="1:message"]/div</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-14T08:45:53.839444" elapsed="0.074187"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-14T08:45:53.922736" level="INFO">Sending key(s) ('ENTER',) to //*[@id="1:message"]/div element.</msg>
+<msg time="2025-08-14T08:45:54.270340" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-14T08:45:54.273139" level="INFO">Releasing special key ENTER.</msg>
+<arg>//*[@id="1:message"]/div</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-14T08:45:53.913631" elapsed="0.379345"/>
+</kw>
+<arg>${popup_present}</arg>
+<arg>Press Keys</arg>
+<arg>//*[@id="1:message"]/div</arg>
+<arg>ENTER</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-08-14T08:45:53.913631" elapsed="0.379345"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-14T08:45:56.293761" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-14T08:45:54.292976" elapsed="2.000785"/>
+</kw>
+<var name="${row}">{'Instrument': 'ACRO_RG', 'Price': 3450, 'Qty': 50}</var>
+<status status="PASS" start="2025-08-14T08:45:34.655258" elapsed="21.638503"/>
+</iter>
+<var>${row}</var>
+<value>@{data}</value>
+<status status="PASS" start="2025-08-14T08:45:12.125884" elapsed="44.167877"/>
+</for>
+<kw name="Close Workbook" owner="RPA.Excel.Files">
+<msg time="2025-08-14T08:45:56.295825" level="INFO">Closing workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x00000179B63012B0&gt;</msg>
+<doc>Close the active workbook.</doc>
+<status status="PASS" start="2025-08-14T08:45:56.293761" elapsed="0.002064"/>
+</kw>
+<status status="PASS" start="2025-08-14T08:45:08.936346" elapsed="47.359479"/>
+</test>
+<status status="PASS" start="2025-08-14T08:44:53.312950" elapsed="62.984896"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="2" fail="0" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
