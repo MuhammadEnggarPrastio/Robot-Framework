@@ -43,7 +43,7 @@ Create Order
     # Ini order > 1
     # FOR    ${instrument}    ${price}    ${qty}    IN    @{OrderData}
     # Log    Ordering ${instrument} at price ${price} for quantity ${qty}
-    
+    #
     #Baca Data Dari Excel
     Open Workbook    ${EXCEL_FILE}
     ${data}=    Read Worksheet As Table    header=True
