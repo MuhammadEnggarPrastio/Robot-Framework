@@ -27,7 +27,7 @@ Login Test
     # Validasi login berhasil
     Wait Until Page Contains    Welcome!    timeout=10s
     Page Should Contain         Welcome!
-    Sleep    10s
+    Sleep    5s
 
     # Tutup browser
     #Close Browser
